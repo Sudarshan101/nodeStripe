@@ -1,0 +1,6 @@
+cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=665333239497-6144h3q51bjaja74tk3bicogurqljo5b.apps.googleusercontent.com
+
+
+cordova plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="325356427827541" --variable APP_NAME="Mavie"
+
+cordova plugin add cordova-plugin-facebook4 --save --variable APP_ID="325356427827541" --variable APP_NAME="Mavie"

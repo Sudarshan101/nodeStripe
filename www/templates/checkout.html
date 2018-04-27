@@ -1,0 +1,55 @@
+<ion-view view-title="cart">
+  <ion-header-bar class="content">
+    <div class="h1 title">Checkout</div>
+  </ion-header-bar>
+  <ion-content scroll="true"  class="content mainBody"> 
+       <form stripe:form="saveCustomer">
+        <br /><br />
+            <label class="item item-input ">
+                    <i class="icon ion-ios-person placeholder-icon" style="font-size: 25px !important;"></i>
+                    <input type="text" ng-model="sforms.name" placeholder="Account Holder Name">
+                </label>
+            <label class="item item-input no_background margin5 topDownText">
+                <i class="icon ion-card placeholder-icon" style="font-size: 25px !important;"></i>
+                <input type="tel" class="placeholderWhite inputform" data-stripe="number" ng-model="sforms.creditcard" placeholder="Credit Card">
+            </label>
+            <div class="row no_padding topDownText" style="padding:0px !important;">
+                <div class="col col-50 no_padding" style="padding:0px !important;">
+                    <label class="item item-input no_background inputform" style="padding-left:0px !important;width: 100%;float: right;">
+                        <select data-stripe="exp-month" ng-model="sforms.month" style="width:100% !important; color:rgb(0, 0, 0) !important; border:none !important; height:30px !important;background-color:transparent !important;">
+                            <option value="">Month</option>
+                             <option value="01">01</option>
+                             <option value="02">02</option>
+                             <option value="03">03</option>
+                             <option value="04">04</option>
+                             <option value="05">05</option>
+                             <option value="06">06</option>
+                             <option value="07">07</option>
+                             <option value="08">08</option>
+                             <option value="09">09</option>
+                             <option value="10">10</option>
+                             <option value="11">11</option>
+                             <option value="12">12</option>
+                        </select>
+                    </label>
+                </div>
+              &nbsp;&nbsp;
+                <div class="col col-50 no_padding" style="padding:0px !important;">
+                    <label class="item item-input no_background inputform" style="padding-left:0px !important;">
+                        <select data-stripe="exp-year" ng-model="sforms.year" style="width:98% !important; color:rgb(0, 0, 0) !important; border:none !important; height:30px !important;background-color:transparent !important;">
+                            <option value="">Year</option>
+                            <option ng-repeat ="n in range(2018,2030) track by $index" value="{{n}}">{{n}}</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <label class="item item-input no_background margin5 topDownText">
+                <i class="icon ion-ios-locked placeholder-icon" style="font-size: 25px !important;"></i>
+                <input type="tel" size="4" class="placeholderWhite inputform" data-stripe="cvc" ng-model="sforms.cvv" placeholder="CVV">
+            </label>
+            <button  ng-click="checkvalid()" class="button button-block button-positive" style="width: 96%; margin-left: 2%;margin-top: 24px;border-radius: 3px !important;font-size: 20px;">
+                NEXT
+            </button>
+        </form>
+  </ion-content>
+</ion-view>
